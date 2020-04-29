@@ -28,7 +28,7 @@ class DomainCrawler:
 
         url = urlparse(href)
         if url.netloc == "":
-            href = self.parsed_base_url.scheme + ':\\' +\
+            href = self.parsed_base_url.scheme + '://' +\
                    self.parsed_base_url.netloc +\
                    href
 
@@ -46,6 +46,7 @@ class DomainCrawler:
             return
 
         soup = BeautifulSoup(response.text, features="html.parser")
+        print([soup.title.string, href])
         self.csv_file.writerow([soup.title.string, href])
 
         # similar to ruby each loop
