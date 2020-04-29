@@ -1,2 +1,2 @@
 # Cookbook
-collection of learning/practise code
+collection of learning/practise python code
